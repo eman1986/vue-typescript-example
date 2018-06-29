@@ -1,0 +1,24 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "module": "es2015",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "strict": true,
+    "rootDir": "src"
+  },
+  "exclude": [
+    "node_modules",
+    "definitions"
+  ],
+  "files": [
+    "definitions/sfc.d.ts"
+  ],
+  "include": [
+    "src/**/*.*"
+  ]
+}

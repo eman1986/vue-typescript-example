@@ -1,15 +1,18 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "lib": [
-      "es2015",
-      "dom"
-    ],
-    "module": "es2015",
-    "moduleResolution": "node",
+    "allowJs": true,
     "experimentalDecorators": true,
+    "lib": [
+      "dom",
+      "es2015.promise",
+      "es5"
+    ],
+    "module": "ES2015",
+    "moduleResolution": "node",
+    "rootDir": "src",
     "strict": true,
-    "rootDir": "src"
+    "target": "es5"
   },
   "exclude": [
     "node_modules",

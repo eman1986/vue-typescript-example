@@ -24,7 +24,7 @@
                     </div>
                     <p class="has-text-grey">
                         <router-link :to="{ name: 'RecoverAccount'}">Forgot Password?</router-link>
-                        <a href="../">Forgot Password?</a>
+                        <a href="..">Forgot Password?</a>
                     </p>
                 </div>
             </div>

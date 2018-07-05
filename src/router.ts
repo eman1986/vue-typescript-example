@@ -1,19 +1,9 @@
 import LoginComponent from './views/login.vue';
 import Vue from 'vue';
 import VueRouter, {Route} from 'vue-router';
+import middleware from "./routes/middleware";
 
 Vue.use(VueRouter);
-
-// todo: temp placement.
-const Auth = {
-    loggedIn: false,
-    login: function () {
-        this.loggedIn = true
-    },
-    logout: function () {
-        this.loggedIn = false
-    }
-};
 
 const routerConfig = new VueRouter({
     scrollBehavior(to, from, savedPosition) {
@@ -30,12 +20,6 @@ const routerConfig = new VueRouter({
     ]
 });
 
-routerConfig.beforeEach((to: Route, from: Route, next: Function) => {
-    if (to.matched.some(record => record.meta.requiresAuth) && !Auth.loggedIn) {
-        next({ path: '/login', query: { redirect: to.fullPath }});
-    } else {
-        next();
-    }
-});
+middleware(routerConfig);
 
 export default routerConfig;

@@ -7,6 +7,10 @@
     import Component from 'vue-class-component'
 
     @Component
-    export default class DashboardComponent extends Vue {
+    export default class NotFoundComponent extends Vue {
     }
 </script>
+
+<style scoped>
+
+</style>

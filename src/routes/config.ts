@@ -1,7 +1,7 @@
-import LoginComponent from './views/login.vue';
 import Vue from 'vue';
-import VueRouter, {Route} from 'vue-router';
-import middleware from "./routes/middleware";
+import VueRouter from 'vue-router';
+import middleware from "./middleware";
+import {RouteRules} from "./rules";
 
 Vue.use(VueRouter);
 
@@ -14,10 +14,7 @@ const routerConfig = new VueRouter({
         }
     },
     linkActiveClass: 'is-active',
-    routes: [
-        {path: '/login', name: 'Login', component: LoginComponent},
-        {path: '/dashboard', name: 'Dashboard', component: LoginComponent, meta: {requiresAuth: true}}
-    ]
+    routes: RouteRules
 });
 
 middleware(routerConfig);

@@ -3,23 +3,23 @@ import 'bulma/css/bulma.css';
 import 'buefy/lib/buefy.css'
 import './styles/app.scss';
 
-import store from './store';
 import App from './app.vue';
 import routerConfig from './router';
 import Buefy from 'buefy';
 import Vue from 'vue';
 import VeeValidate from 'vee-validate';
+import {UseAxios} from "./core/http";
 
 Vue.use(Buefy);
 Vue.use(VeeValidate);
 
-new Vue({
-    el: "#app",
-    router: routerConfig,
-    store:  store,
-    components: { App: App },
-    render: h => h(App),
-    methods: {
-        //  validations(){}
-    }
-}).$mount('#app');
+UseAxios(routerConfig);
+
+Vue.config.errorHandler = function(err, vm, info) {
+    // todo:
+};
+Vue.config.warnHandler = function(msg, vm, info) {
+    // todo:
+};
+
+new App().$mount('#app');

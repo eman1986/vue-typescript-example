@@ -23,8 +23,7 @@
                         </form>
                     </div>
                     <p class="has-text-grey">
-                        <router-link :to="{ name: 'RecoverAccount'}">Forgot Password?</router-link>
-                        <a href="..">Forgot Password?</a>
+                        <router-link :to="{ name: RouteNames.accountRecovery }">Forgot Password</router-link>
                     </p>
                 </div>
             </div>

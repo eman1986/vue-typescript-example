@@ -11,8 +11,11 @@ module.exports = {
         vendor: [
             'axios',
             'buefy',
+            'vee-validate',
             'vue',
-            'vue-router'
+            'vue-class-component',
+            'vue-router',
+            'vuex'
         ]
     },
     output: {

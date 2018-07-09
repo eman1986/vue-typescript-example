@@ -69,9 +69,9 @@ module.exports = {
             filename: "[name].css",
             chunkFilename: "[id].css"
         }),
-        // new webpack.DllReferencePlugin({
-        //     context: __dirname,
-        //     manifest: require('./build/lib/vendor.json')
-        // })
+        new webpack.DllReferencePlugin({
+            context: __dirname,
+            manifest: require('./build/lib/vendor.json')
+        })
     ]
 };

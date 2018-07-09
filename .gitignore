@@ -22,4 +22,5 @@
 # Editor-based Rest Client
 .idea/httpRequests
 
+build/
 node_modules/

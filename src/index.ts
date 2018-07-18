@@ -1,16 +1,13 @@
 import 'font-awesome/css/font-awesome.css';
 import 'bulma/css/bulma.css';
-import 'buefy/lib/buefy.css'
 import './styles/app.scss';
 
 import App from './app.vue';
-import routerConfig from './router';
-import Buefy from 'buefy';
+import routerConfig from './routes/config';
 import Vue from 'vue';
 import VeeValidate from 'vee-validate';
 import {UseAxios} from "./core/http";
 
-Vue.use(Buefy);
 Vue.use(VeeValidate);
 
 UseAxios(routerConfig);

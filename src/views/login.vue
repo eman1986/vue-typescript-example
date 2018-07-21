@@ -5,15 +5,15 @@
                 <div class="column is-4 is-offset-4">
                     <div class="box">
                         <figure class="avatar">
-                            <img src="images/login-icon.png">
+                            <img src="https://placehold.it/128x128">
                         </figure>
                         <form @submit.prevent="authenticate">
                             <div class="field">
                                 <div class="control">
-                                    <input class="input is-large" type="email" placeholder="Email" autofocus>
+                                    <input type="email" name="email"  placeholder="Email" class="input is-large" :class="{'input': true, 'is-danger': errors.has('email') }" v-model="username" v-validate required />
+                                    <span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
                                 </div>
                             </div>
-
                             <div class="field">
                                 <div class="control">
                                     <input class="input is-large" type="password" placeholder="Your Password">

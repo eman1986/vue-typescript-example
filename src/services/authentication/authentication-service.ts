@@ -2,7 +2,7 @@ import axios from 'axios';
 import {AppConfig} from '../../core/app-config';
 import {ICredential} from "../../model/credential";
 
-export class AuthenticationService  {
+export class AuthenticationService {
     /**
      * determines if a user is authenticated.
      * @type {boolean}
@@ -14,7 +14,7 @@ export class AuthenticationService  {
      * @param {ICredential} credential
      * @returns {Promise<void>}
      */
-    static async login (credential: ICredential) {
+    static async login(credential: ICredential) {
         try {
             const response = await axios.post(AppConfig.LoginUrl,{
                 'username': credential.username,
@@ -36,8 +36,7 @@ export class AuthenticationService  {
      * Pings API to see if token is still valid.
      * @returns {Promise<boolean>}
      */
-    static async ping()
-    {
+    static async ping() {
         try {
             const response = await axios.get(AppConfig.PingUrl);
 

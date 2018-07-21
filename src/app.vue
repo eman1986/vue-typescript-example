@@ -9,7 +9,6 @@
                     <span></span>
                 </div>
             </div>
-
             <div id="AppMenu" class="navbar-menu">
                 <div class="navbar-start">
                     <router-link :to="{ name: RouteNames.login }" class="navbar-item ">Login</router-link>

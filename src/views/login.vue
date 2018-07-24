@@ -35,6 +35,8 @@
     import './style/login.css';
     import Vue from 'vue'
     import Component from 'vue-class-component'
+    import {AuthenticationService} from "../services/authentication/authentication-service";
+    import {ICredential} from "../model/credential";
 
     @Component
     export default class LoginComponent extends Vue {
@@ -43,8 +45,12 @@
         msg: string;
 
         authenticate(e) {
-            // write you own auth logic here
-            this.msg = 'Login failed';
+            const credentials: ICredential = {
+                username: this.username,
+                password: this.password
+            };
+
+            AuthenticationService.login(credentials);
         }
     }
 </script>

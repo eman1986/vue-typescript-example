@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {AppConfig} from '../../core/app-config';
 import {ICredential} from "../../model/credential";
+import {IUser} from "../../model/user";
 
 export class AuthenticationService {
     /**
@@ -29,6 +30,22 @@ export class AuthenticationService {
             }
         } catch (error) {
             console.error(error);
+        }
+    }
+
+    /**
+     * see if a user has a role.
+     * @param {IUser} user
+     * @param {string} role
+     * @returns {boolean}
+     */
+    static isInRole(user: IUser, role: string): boolean {
+
+        if (!user.roles) {
+            return false;
+        }
+        else {
+            return user.roles.find(o => o.toLowerCase() === role.toLowerCase()) !== undefined;
         }
     }
 
